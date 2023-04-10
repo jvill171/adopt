@@ -1,0 +1,25 @@
+{{ form.hidden_tag() }}
+
+{% for field in form
+    if field.widget.input_type != 'hidden' %}
+    <div class="form-group">
+        {{ field.label }}
+
+        {% if field.widget.input_type == 'checkbox' %}
+            {{ field(class="form-check-input") }}
+            
+        {% elif field.widget.input_type in ['text', 'number'] %}
+            {{ field(class="form-control") }}
+
+        {% else %}
+            {{ field(class="form-select") }}
+            
+        {% endif %}
+        <span>
+        {% for error in field.errors %}
+            <b>{{ error }}</b>
+        {% endfor %}
+        </span>
+    </div>
+ <br>
+{% endfor %}
