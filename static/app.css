@@ -1,0 +1,9 @@
+body{
+    background-image: url('https://cdn.pixabay.com/photo/2012/03/01/00/53/dog-19812_960_720.jpg');
+}
+
+body > *{
+    background-color: rgba(255, 235, 222, 0.95);
+    border-radius: 5px;
+
+}
